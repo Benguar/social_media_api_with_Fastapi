@@ -5,14 +5,14 @@ from social.db.settings import settings
 #token_blacklist is for access tokens when logged out
 #token_active is for refresh tokens that has not been used
 token_blacklist = aioredis.StrictRedis(
-    host= settings.redis_host,
-    port= settings.redis_port,
+    host= settings.REDIS_HOST,
+    port= settings.REDIS_PORT,
     db=0,
     decode_responses= True
 )
 token_active = aioredis.StrictRedis(
-    host= settings.redis_host,
-    port= settings.redis_port,
+    host= settings.REDIS_HOST,
+    port= settings.REDIS_PORT,
     db=1,
     decode_responses=True
 )

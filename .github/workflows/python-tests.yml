@@ -22,5 +22,13 @@ jobs:
         pip install pytest httpx
 
     - name: Run tests with pytest
+      env:
+        # Add all the variables your Settings class requires here
+        URL: "postgresql+psycopg://benguar:dummypass@localhost/social"
+        JWT_KEY: "JWT_SECRET_KEY"
+        ALGORITHM: "JWT_ALGORITHM"
+        REDIS_HOST: 'localhost'
+        REDIS_PORT: 6379
+        GROQ_API_KEY: 'groq_api_key_value'
       run: |
         pytest

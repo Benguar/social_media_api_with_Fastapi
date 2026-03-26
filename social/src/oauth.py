@@ -15,7 +15,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f'/social/login/v1')
 
 
 SECRET_KEY = settings.JWT_KEY
-ALGORITHM = settings.algorithm
+ALGORITHM = settings.ALGORITHM
 EXPIRE_MIN = 10
 
 async def create_access_token(response: Response,data: dict):

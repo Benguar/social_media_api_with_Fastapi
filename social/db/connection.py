@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import create_async_engine,async_sessionmaker
 from social.db.settings import settings
 
 
-url = settings.url
+url = settings.URL
 engine = create_async_engine(url)
 
 
