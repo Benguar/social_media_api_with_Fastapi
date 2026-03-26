@@ -1,5 +1,5 @@
 from social.test.config_test import fake_user_service,fake_session,test_client
-from social import version
+from social.main import version
 
 
 

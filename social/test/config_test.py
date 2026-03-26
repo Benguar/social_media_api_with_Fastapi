@@ -1,6 +1,6 @@
 from social.db.connection import get_db
 from unittest.mock import AsyncMock,MagicMock
-from social import app
+from social.main import app
 import pytest
 from fastapi.testclient import TestClient
 from social.src.oauth import oauth2_scheme
