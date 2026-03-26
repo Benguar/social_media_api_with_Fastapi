@@ -19,5 +19,3 @@ app.include_router(posts.route, prefix= f"/social/posts/{version}",tags=["Posts"
 app.include_router(auth.route,prefix=f"/social",tags=["login"])
 app.include_router(like.route,prefix=f'/social/like/{version}', tags=["like"])
 
-# pip install pyJWT -> library used to create JWT tokens
-#pip install argon2-cffi -> for argon2

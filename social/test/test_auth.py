@@ -1,7 +1,7 @@
 from social.test.config_test import fake_user_service,fake_session,test_client
 from social import version
 
-#i want to check if the user is created successfully and if the password is hashed and not stored in plain text
+
 
 def test_create_user(fake_session,fake_user_service,test_client):
     data = {
@@ -14,4 +14,4 @@ def test_create_user(fake_session,fake_user_service,test_client):
         json= data
     )
     assert response.status_code == 201
-    
+

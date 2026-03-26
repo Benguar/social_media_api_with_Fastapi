@@ -20,8 +20,6 @@ class User(Base):
     likes:Mapped[list["Likes"]] = relationship(back_populates="user") 
     # The Posts class is wrapped inside a list because it is a one to many relationship we are going to be having many posts. back populates helps complete the handshake between both tables it goes to the posts table to check for the variable user if it does exist to complete the synchronization both tables needs to be synchronized on can not be backpopulated without the other 
 
-    # def __repr__(self) -> str:
-    #     return f'user: Username={self.username}'
 
 class Posts(Base):
     __tablename__ = "posts_table"
@@ -37,8 +35,6 @@ class Posts(Base):
     likes: Mapped[list["Likes"]] =  relationship(back_populates="post")
     # back populates helps complete the handshake between both tables it goes to the users table to check for the variable user if it does exist to complete the synchronization both tables needs to be synchronized on can not be backpopulated without the other 
 
-    # def __repr__(self) -> str:
-    #     return f'Post  Content= {self.posts} by {self.user.username}'
 
 class Likes(Base):
     __tablename__ = "likes_table"
@@ -74,4 +70,3 @@ async def create_tables():
         await conn.run_sync(Base.metadata.create_all)
 
 
-# Base.metadata.create_all(bind=engine) #this creates all the tables in the database the bind=engine connects the tables with the database
